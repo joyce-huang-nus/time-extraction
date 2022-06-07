@@ -1,0 +1,20 @@
+# Extract current time
+import time
+timestr = time.strftime("%d%m%Y")
+print(timestr)
+
+import pandas as pd
+import numpy as np
+from pandas import ExcelWriter
+
+# Read excel file
+file_path = r'path'
+sheet_name = 'sheet1'
+df = pd.read_excel(file_path, sheet_name = sheet_name)
+
+# Export excel file
+writer = ExcelWriter(r'path', mode='w')
+df.to_excel(writer, 'sheet1', index=False)
+df2.to_excel(writer, 'sheet2', index=False)
+df3.to_excel(writer, 'sheet3, index=False)
+writer.save()
